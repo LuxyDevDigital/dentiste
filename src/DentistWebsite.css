@@ -1,7 +1,7 @@
 /* Container */
 .container {
   margin: 0 auto;
-  padding: 0 10rem;
+  padding: 0 2rem;
 }
 
 /* Header Styles */
@@ -24,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px; 
+  padding: 8px;
   margin: 0 auto;
 }
 
@@ -770,59 +770,60 @@
 }
 
 /* Responsive Design */
-@media (min-width: 768px) {
+/* mobile */
+@media (max-width: 767px) {
+  /* Use single-column layouts on small screens */
   .hero-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .hero-buttons {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .about-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .contact-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .insurance-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .form-row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  
-}
-
-@media (min-width: 1024px) {
- 
-  .nav {
-    display: flex;
-  }
-
+  /* show mobile menu button and hide desktop nav on small screens */
   .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav {
     display: none;
   }
 
   .emergency-contact {
-    display: flex;
+    display: none;
   }
 }
 
+/* tablet and below */
 @media (max-width: 1023px) {
+  /* tablet and small laptops: use condensed container padding and show mobile menu button */
   .nav {
     display: none;
   }
@@ -840,6 +841,28 @@
   }
 
   .emergency-contact {
+    display: none;
+  }
+}
+
+/* desktop and larger: restore wide container padding and two-column hero/about */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 10rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  /* desktop hides the mobile menu button */
+  .mobile-menu-btn {
     display: none;
   }
 }

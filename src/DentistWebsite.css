@@ -24,8 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px; /* réduit de 20px à 10px */
-  max-width: 1100px;
+  padding: 8px; 
   margin: 0 auto;
 }
 
